@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - SoleStyle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-shoe-prints"></i>
+                <span>SoleStyle</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html" class="active">Productos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <i class="fas fa-search" id="search-btn"></i>
+                <i class="fas fa-shopping-cart" id="cart-btn">
+                    <span class="cart-count">0</span>
+                </i>
+                <i class="fas fa-bars" id="menu-toggle"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Nuestra Colección</h1>
+            <p>Descubre todos nuestros productos premium</p>
+        </section>
+
+        <section class="products-page">
+            <div class="filters-sidebar">
+                <h3>Filtros</h3>
+                
+                <div class="filter-group">
+                    <h4>Categoría</h4>
+                    <label><input type="checkbox" value="deportivos"> Deportivos</label>
+                    <label><input type="checkbox" value="formales"> Formales</label>
+                    <label><input type="checkbox" value="casuales"> Casuales</label>
+                    <label><input type="checkbox" value="botas"> Botas</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Precio</h4>
+                    <label><input type="checkbox" value="0-50"> €0 - €50</label>
+                    <label><input type="checkbox" value="50-100"> €50 - €100</label>
+                    <label><input type="checkbox" value="100-150"> €100 - €150</label>
+                    <label><input type="checkbox" value="150+"> €150+</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Talla</h4>
+                    <label><input type="checkbox" value="38"> 38</label>
+                    <label><input type="checkbox" value="39"> 39</label>
+                    <label><input type="checkbox" value="40"> 40</label>
+                    <label><input type="checkbox" value="41"> 41</label>
+                    <label><input type="checkbox" value="42"> 42</label>
+                    <label><input type="checkbox" value="43"> 43</label>
+                </div>
+
+                <button onclick="limpiarFiltros()">Limpiar Filtros</button>
+            </div>
+
+            <div class="products-content">
+                <div class="products-header">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar productos..." id="search-input">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="sort-options">
+                        <select id="sort-select">
+                            <option value="relevancia">Más Relevantes</option>
+                            <option value="precio-asc">Precio: Menor a Mayor</option>
+                            <option value="precio-desc">Precio: Mayor a Menor</option>
+                            <option value="nombre">Nombre A-Z</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="todos-productos">
+                    <!-- Los productos se generarán dinámicamente -->
+                </div>
+
+                <div class="pagination">
+                    <button onclick="cambiarPagina(-1)">‹ Anterior</button>
+                    <span id="page-info">Página 1 de 3</span>
+                    <button onclick="cambiarPagina(1)">Siguiente ›</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SoleStyle</h3>
+                <p>Tu tienda de confianza para zapatos de calidad premium</p>
+                <div class="social-links">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Alicante, España</p>
+                <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@solestyle.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SoleStyle. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

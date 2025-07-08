@@ -3,71 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web - GitHub Pages</title>
+    <title>SoleStyle - Tienda de Zapatos Premium</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <h1>Mi Sitio Web</h1>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+            <div class="logo">
+                <i class="fas fa-shoe-prints"></i>
+                <span>SoleStyle</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
+            <div class="nav-actions">
+                <i class="fas fa-search" id="search-btn"></i>
+                <i class="fas fa-shopping-cart" id="cart-btn">
+                    <span class="cart-count">0</span>
+                </i>
+                <i class="fas fa-bars" id="menu-toggle"></i>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section id="inicio" class="hero">
-            <h2>¡Bienvenido a mi página web!</h2>
-            <p>Esta es una página de ejemplo creada con GitHub Pages</p>
-            <button onclick="mostrarMensaje()">Haz clic aquí</button>
-        </section>
-
-        <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <p>Soy un desarrollador web apasionado por crear experiencias digitales increíbles. Esta página está alojada en GitHub Pages como ejemplo de mis habilidades.</p>
-            <div class="skills">
-                <span class="skill">HTML</span>
-                <span class="skill">CSS</span>
-                <span class="skill">JavaScript</span>
-                <span class="skill">GitHub</span>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Descubre tu Estilo Perfecto</h1>
+                <p>Colección premium de zapatos para cada ocasión</p>
+                <button class="cta-button" onclick="window.location.href='productos.html'">
+                    Explorar Colección
+                </button>
             </div>
-        </section>
-
-        <section id="proyectos">
-            <h2>Proyectos</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Proyecto 1</h3>
-                    <p>Descripción del primer proyecto desarrollado con tecnologías web modernas.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Proyecto 2</h3>
-                    <p>Descripción del segundo proyecto enfocado en la experiencia del usuario.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Proyecto 3</h3>
-                    <p>Descripción del tercer proyecto utilizando las mejores prácticas de desarrollo.</p>
+            <div class="hero-image">
+                <div class="shoe-showcase">
+                    <div class="shoe-card featured">
+                        <div class="shoe-image">👟</div>
+                        <h3>Deportivos Premium</h3>
+                        <p>€89.99</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>¿Quieres contactarme? Puedes hacerlo a través de:</p>
-            <ul>
-                <li>Email: 12sercor12@gmail.com</li>
-                <li>GitHub: <a href="https://github.com/scn22-ua">@scn22-ua</a></li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/sergio-cortés-335724335/">sergio-cortés-335724335</a></li>
-            </ul>
+        <!-- Categorías -->
+        <section class="categories">
+            <h2>Nuestras Categorías</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="filtrarPorCategoria('deportivos')">
+                    <div class="category-icon">👟</div>
+                    <h3>Deportivos</h3>
+                    <p>Comodidad y estilo para el día a día</p>
+                </div>
+                <div class="category-card" onclick="filtrarPorCategoria('formales')">
+                    <div class="category-icon">👞</div>
+                    <h3>Formales</h3>
+                    <p>Elegancia para ocasiones especiales</p>
+                </div>
+                <div class="category-card" onclick="filtrarPorCategoria('casuales')">
+                    <div class="category-icon">👠</div>
+                    <h3>Casuales</h3>
+                    <p>Versatilidad para cualquier momento</p>
+                </div>
+                <div class="category-card" onclick="filtrarPorCategoria('botas')">
+                    <div class="category-icon">🥾</div>
+                    <h3>Botas</h3>
+                    <p>Resistencia y durabilidad</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Productos Destacados -->
+        <section class="featured-products">
+            <h2>Productos Destacados</h2>
+            <div class="products-grid" id="productos-destacados">
+                <!-- Los productos se generarán dinámicamente -->
+            </div>
+            <div class="view-all">
+                <button onclick="window.location.href='productos.html'">Ver Todos los Productos</button>
+            </div>
+        </section>
+
+        <!-- Ofertas -->
+        <section class="offers">
+            <div class="offer-banner">
+                <h2>¡Ofertas Especiales!</h2>
+                <p>Hasta 50% de descuento en productos seleccionados</p>
+                <button onclick="window.location.href='ofertas.html'">Ver Ofertas</button>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <h2>Únete a nuestra comunidad</h2>
+            <p>Recibe las últimas novedades y ofertas exclusivas</p>
+            <form class="newsletter-form" onsubmit="suscribirNewsletter(event)">
+                <input type="email" placeholder="Tu email" required>
+                <button type="submit">Suscribirse</button>
+            </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Mi Sitio Web. Creado con GitHub Pages.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SoleStyle</h3>
+                <p>Tu tienda de confianza para zapatos de calidad premium</p>
+                <div class="social-links">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Alicante, España</p>
+                <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@solestyle.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SoleStyle. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>

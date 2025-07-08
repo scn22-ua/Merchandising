@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas - SoleStyle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-shoe-prints"></i>
+                <span>SoleStyle</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="ofertas.html" class="active">Ofertas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <i class="fas fa-search" id="search-btn"></i>
+                <i class="fas fa-shopping-cart" id="cart-btn">
+                    <span class="cart-count">0</span>
+                </i>
+                <i class="fas fa-bars" id="menu-toggle"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header offers-header">
+            <h1>🔥 Ofertas Especiales</h1>
+            <p>Descuentos increíbles por tiempo limitado</p>
+            <div class="countdown-timer">
+                <div class="timer-item">
+                    <span id="dias">02</span>
+                    <label>Días</label>
+                </div>
+                <div class="timer-item">
+                    <span id="horas">15</span>
+                    <label>Horas</label>
+                </div>
+                <div class="timer-item">
+                    <span id="minutos">30</span>
+                    <label>Minutos</label>
+                </div>
+                <div class="timer-item">
+                    <span id="segundos">45</span>
+                    <label>Segundos</label>
+                </div>
+            </div>
+        </section>
+
+        <section class="flash-deals">
+            <h2>⚡ Flash Deals</h2>
+            <div class="deals-grid">
+                <div class="deal-card hot">
+                    <div class="deal-badge">-50%</div>
+                    <div class="product-image">🏃‍♂️</div>
+                    <h3>Nike Air Max</h3>
+                    <div class="price">
+                        <span class="old-price">€120</span>
+                        <span class="new-price">€60</span>
+                    </div>
+                    <button class="buy-btn" onclick="comprarProducto('nike-air-max')">
+                        <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                    </button>
+                </div>
+
+                <div class="deal-card">
+                    <div class="deal-badge">-35%</div>
+                    <div class="product-image">👠</div>
+                    <h3>Tacones Elegantes</h3>
+                    <div class="price">
+                        <span class="old-price">€85</span>
+                        <span class="new-price">€55</span>
+                    </div>
+                    <button class="buy-btn" onclick="comprarProducto('tacones-elegantes')">
+                        <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                    </button>
+                </div>
+
+                <div class="deal-card">
+                    <div class="deal-badge">-40%</div>
+                    <div class="product-image">🥾</div>
+                    <h3>Botas de Montaña</h3>
+                    <div class="price">
+                        <span class="old-price">€150</span>
+                        <span class="new-price">€90</span>
+                    </div>
+                    <button class="buy-btn" onclick="comprarProducto('botas-montana')">
+                        <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="seasonal-offers">
+            <h2>🌟 Ofertas de Temporada</h2>
+            <div class="seasonal-grid">
+                <div class="seasonal-card">
+                    <h3>Colección Primavera</h3>
+                    <p>Zapatos frescos y cómodos</p>
+                    <div class="discount">20% OFF</div>
+                    <button onclick="window.location.href='productos.html'">Ver Colección</button>
+                </div>
+                <div class="seasonal-card">
+                    <h3>Deportivos Running</h3>
+                    <p>Para tus entrenamientos</p>
+                    <div class="discount">30% OFF</div>
+                    <button onclick="window.location.href='productos.html'">Ver Colección</button>
+                </div>
+                <div class="seasonal-card">
+                    <h3>Zapatos Formales</h3>
+                    <p>Elegancia profesional</p>
+                    <div class="discount">25% OFF</div>
+                    <button onclick="window.location.href='productos.html'">Ver Colección</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="clearance">
+            <h2>🏷️ Liquidación</h2>
+            <p>Últimas unidades con descuentos increíbles</p>
+            <div class="clearance-grid" id="productos-liquidacion">
+                <!-- Los productos se generarán dinámicamente -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SoleStyle</h3>
+                <p>Tu tienda de confianza para zapatos de calidad premium</p>
+                <div class="social-links">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Alicante, España</p>
+                <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@solestyle.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SoleStyle. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
